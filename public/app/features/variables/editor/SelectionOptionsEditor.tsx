@@ -26,6 +26,13 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
     [onMultiChangedProps, variable]
   );
 
+  const onSelectAllChanged = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      onPropChange({ propName: 'selectAll', propValue: event.target.checked });
+    },
+    [onPropChange]
+  );
+
   const onIncludeAllChanged = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       onPropChange({ propName: 'includeAll', propValue: event.target.checked });
@@ -50,6 +57,15 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
           tooltip="Enables multiple values to be selected at the same time"
           onChange={onMultiChanged}
           ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsMultiSwitch}
+        />
+      </InlineFieldRow>
+      <InlineFieldRow>
+        <VariableSwitchField
+          value={variable.selectAll}
+          name="Select all by default"
+          tooltip="Selects all options by default"
+          onChange={onSelectAllChanged}
+          ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsSelectAllSwitch}
         />
       </InlineFieldRow>
       <InlineFieldRow>

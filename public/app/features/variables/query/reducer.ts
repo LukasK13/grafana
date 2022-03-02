@@ -33,6 +33,7 @@ export const initialQueryVariableModelState: QueryVariableModel = {
   sort: VariableSort.disabled,
   refresh: VariableRefresh.onDashboardLoad,
   multi: false,
+  selectAll: false,
   includeAll: false,
   allValue: null,
   options: [],

@@ -90,6 +90,7 @@ export interface ConstantVariableModel extends VariableWithOptions {}
 
 export interface VariableWithMultiSupport extends VariableWithOptions {
   multi: boolean;
+  selectAll: boolean;
   includeAll: boolean;
   allValue?: string | null;
 }

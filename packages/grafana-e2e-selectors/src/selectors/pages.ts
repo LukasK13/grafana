@@ -114,6 +114,7 @@ export const Pages = {
             generalLabelInput: 'Variable editor Form Label field',
             generalHideSelect: 'Variable editor Form Hide select',
             selectionOptionsMultiSwitch: 'Variable editor Form Multi switch',
+            selectionOptionsSelectAllSwitch: 'Variable editor Form SelectAll switch',
             selectionOptionsIncludeAllSwitch: 'Variable editor Form IncludeAll switch',
             selectionOptionsCustomAllInput: 'Variable editor Form IncludeAll field',
             previewOfValuesOption: 'Variable editor Preview of Values option',

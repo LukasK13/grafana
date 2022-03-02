@@ -428,7 +428,11 @@ export const validateVariableSelectionState = (
     const setValue = variableAdapters.get(variableInState.type).setValue;
 
     if (Array.isArray(current.value)) {
-      const selected = selectOptionsForCurrentValue(variableInState);
+      if (variableInState.selectAll) {
+        var selected = variableInState.options;
+      } else {
+        var selected = selectOptionsForCurrentValue(variableInState);
+      }
 
       // if none pick first
       if (selected.length === 0) {

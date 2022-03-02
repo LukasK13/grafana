@@ -63,6 +63,7 @@ describe('Variables - Add variable', () => {
         e2e.components.Select.singleValue().should('have.text', 'Disabled');
       });
     e2e.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsMultiSwitch().should('not.be.checked');
+    e2e.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsSelectAllSwitch().should('not.be.checked');
     e2e.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsIncludeAllSwitch().should('not.be.checked');
 
     e2e.pages.Dashboard.Settings.Variables.Edit.General.previewOfValuesOption().should('not.exist');
@@ -145,6 +146,10 @@ describe('Variables - Add variable', () => {
       .blur();
 
     e2e.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsMultiSwitch()
+      .click({ force: true })
+      .should('be.checked');
+
+    e2e.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsSelectAllSwitch()
       .click({ force: true })
       .should('be.checked');
 
